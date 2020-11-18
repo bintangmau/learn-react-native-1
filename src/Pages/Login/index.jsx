@@ -37,17 +37,28 @@ export default function Login({ navigation }) {
 
                     <Text style={{ marginTop: 20, fontSize: 14, marginBottom: 15 }}>Silahkan masuk untuk mulai belajar</Text>
                     <View style={styles.inputSection}>
+                        <Icon 
+                            name='email'
+                            style={styles.icon}
+                        />
                         <TextInput 
                             style={styles.input}
                             placeholder="Masukkan alamat email"
-                            underlineColorAndroid="transparent"
+                            underlineColorAndroid= 'transparent'
                         />
                     </View>
-                    <TextInput 
-                        style={styles.input}
-                        placeholder="Masukkan kata sandi"
-                        secureTextEntry={true}
-                    />
+                    <View style={styles.inputSection}>
+                        <Icon 
+                            name='email'
+                            style={styles.icon}
+                        />
+                        <TextInput 
+                            style={styles.input}
+                            placeholder="Masukkan alamat email"
+                            underlineColorAndroid= 'transparent'
+                        />
+                    </View>
+
                 </View>
 
           </View>
@@ -101,13 +112,29 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'white'
     },
-    input: {
+    inputSection: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
         border: '1px solid #c4c4c4',
-        marginTop: 10,
+        height: 35,
+        borderRadius: 5 ,
+        width: 200,
+        margin: 10, 
+    },
+    input: {
         width: 200,
         height: 35,
-        fontSize: 11,
-        paddingLeft: 10,
-        borderRadius: 10,
+        fontSize: 11
+    },
+    icon: {
+        padding: 10,
+        margin: 5,
+        height: 25,
+        width: 25,
+        resizeMode : 'stretch',
+        alignItems: 'center',
+        marginTop: -15
     }
 });
