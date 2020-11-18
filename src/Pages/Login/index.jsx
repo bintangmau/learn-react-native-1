@@ -1,10 +1,18 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet, TouchableOpacity, TextInput } from 'react-native'
+import { Icon } from 'react-native-elements'
 
 // IMAGE
 import IndihomeLogo from '../../../assets/indihome-logo.jpg'
 
 export default function Login({ navigation }) {
+    const renderIcon = () => {
+        return (
+            <Icon 
+                name='email'
+            />
+        )
+    }
     return (
         <View>
 
@@ -27,11 +35,14 @@ export default function Login({ navigation }) {
                 {/* LOGIN BOX */}
                 <View style={styles.containerLogin}>
 
-                    <Text style={{ marginTop: 20, fontSize: 14 }}>Silahkan masuk untuk mulai belajar</Text>
-                    <TextInput 
-                        style={styles.input}
-                        placeholder="Masukkan alamat email"
-                    />
+                    <Text style={{ marginTop: 20, fontSize: 14, marginBottom: 15 }}>Silahkan masuk untuk mulai belajar</Text>
+                    <View style={styles.inputSection}>
+                        <TextInput 
+                            style={styles.input}
+                            placeholder="Masukkan alamat email"
+                            underlineColorAndroid="transparent"
+                        />
+                    </View>
                     <TextInput 
                         style={styles.input}
                         placeholder="Masukkan kata sandi"
@@ -39,7 +50,7 @@ export default function Login({ navigation }) {
                     />
                 </View>
 
-            </View>
+          </View>
         </View>
     )
 }
@@ -83,13 +94,20 @@ const styles = StyleSheet.create({
         shadowRadius: 5.46,
         borderRadius: 5,
         marginTop: 10,
-        textAlign: 'center'  
+        textAlign: 'center',
+        alignItems: 'center'
     },
     welcomeText: {
         fontWeight: 'bold',
         color: 'white'
     },
     input: {
-        border: '1px solid #f4f4f4'
+        border: '1px solid #c4c4c4',
+        marginTop: 10,
+        width: 200,
+        height: 35,
+        fontSize: 11,
+        paddingLeft: 10,
+        borderRadius: 10,
     }
 });
