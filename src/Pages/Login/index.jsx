@@ -99,6 +99,10 @@ export default function Login({ navigation }) {
                             style={{ width: 35, height: 35,  }}
                         />
                     </View>
+
+                    <Text style={styles.willRegisterText}>Belum punya akun? 
+                        <Text style={styles.span} onPress={() => navigation.navigate('Register')}> Daftar</Text> 
+                    </Text> 
                 </View>
 
           </View>
@@ -214,5 +218,11 @@ const styles = StyleSheet.create({
         width: 90,
         marginTop: 10,
         backgroundColor: '#cccccc'
+    },
+    willRegisterText: {
+        fontSize: 8
+    },
+    span: {
+        color: '#00a1db'
     }
 });
