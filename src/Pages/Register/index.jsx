@@ -1,5 +1,5 @@
 import React, {useState } from 'react'
-import { Text, Picker, View, StyleSheet, TextInput, TouchableHighlight, ScrollView, Button } from 'react-native'
+import { Text, Picker, View, StyleSheet, TextInput, TouchableHighlight, ScrollView, SafeAreaView } from 'react-native'
 import { Icon, SocialIcon } from 'react-native-elements'
 import { RadioButton } from 'react-native-paper'
 
@@ -8,164 +8,177 @@ export default function Register({ navigation }) {
     const [selectedValue, setSelectedValue] = useState("java");
 
     return (
-        <ScrollView style={styles.container}>
+        <SafeAreaView style={styles.SafeAreaView}>
+            <ScrollView style={styles.container}>
 
-            <View style={styles.header}>
-                <Icon 
-                    name="arrow-left"
-                    type="font-awesome"
-                    style={{marginLeft: 20}}
-                    onPress={() => navigation.navigate('Profile')}
-                />
-                <Text style={styles.headerText}>Daftar</Text>
-            </View>
-
-            <View style={styles.contentBox}>
-
-                <View style={{ flexDirection: 'row', marginTop: 10, textAlign: 'center' }}>
-                    <SocialIcon
-                        type='facebook'
-                        style={{ width: 35, height: 35,  }}
-                        />
-                    <SocialIcon
-                        type='google'
-                        style={{ width: 35, height: 35,  }}
-                        />
-                    <SocialIcon
-                        type='medium'
-                        style={{ width: 35, height: 35,  }}
-                        />
-                </View>
-
-                <View style={styles.hr}>
-
-                </View>
-
-                <View style={styles.inputBox}> 
-                    <Text style={styles.inputLabel}>Nama Lengkap</Text>
-                    <TextInput 
-                        style={styles.input}
-                        placeholder="Nama Lengkap"
+                <View style={styles.header}>
+                    <Icon 
+                        name="arrow-left"
+                        type="font-awesome"
+                        style={{marginLeft: 20}}
+                        onPress={() => navigation.navigate('Profile')}
                     />
+                    <Text style={styles.headerText}>Daftar</Text>
                 </View>
 
-                <View style={styles.inputBox}> 
-                    <Text style={styles.inputLabel}>Email</Text>
-                    <TextInput 
-                        style={styles.input}
-                        placeholder="Masukkan alamat email"
-                    />
-                </View>
+                <View style={styles.contentBox}>
 
-                <View style={styles.inputBox}>
-                    <Text style={styles.inputLabel}>Jenis Kelamin</Text>
-                    <View style={{ flexDirection: 'row', width: 300 }}>
-                        <RadioButton
-                            value="first"
-                            status={ checked === 'first' ? 'checked' : 'unchecked' }
-                            onPress={() => setChecked('first')}
+                    <View style={{ flexDirection: 'row', marginTop: 10, textAlign: 'center' }}>
+                        <SocialIcon
+                            type='facebook'
+                            style={{ width: 35, height: 35,  }}
                             />
-                        <RadioButton
-                            value="second"
-                            status={ checked === 'second' ? 'checked' : 'unchecked' }
-                            onPress={() => setChecked('second')}
+                        <SocialIcon
+                            type='google'
+                            style={{ width: 35, height: 35,  }}
+                            />
+                        <SocialIcon
+                            type='medium'
+                            style={{ width: 35, height: 35,  }}
                             />
                     </View>
-                </View>
 
-                <View style={styles.inputBox}> 
-                    <Text style={styles.inputLabel}>Nomor Handphone</Text>
-                    <TextInput 
-                        style={styles.input}
-                        placeholder="Contoh: 082323355181"
-                    />
-                </View>
+                    <View style={styles.hr}>
 
-                <View style={styles.inputBox}> 
-                    <Text style={styles.inputLabel}>Nama Sekolah</Text>
-                    <TextInput 
-                        style={styles.input}
-                        placeholder="Contoh: SD Krida Nusantara"
-                    />
-                </View>
+                    </View>
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', flex: 1, width: 300 }}>
                     <View style={styles.inputBox}> 
-                        <Text style={styles.inputLabel}>Kelas</Text>
+                        <Text style={styles.inputLabel}>Nama Lengkap</Text>
+                        <TextInput 
+                            style={styles.input}
+                            placeholder="Nama Lengkap"
+                        />
+                    </View>
+
+                    <View style={styles.inputBox}> 
+                        <Text style={styles.inputLabel}>Email</Text>
+                        <TextInput 
+                            style={styles.input}
+                            placeholder="Masukkan alamat email"
+                        />
+                    </View>
+
+                    <View style={styles.inputBox}>
+                        <Text style={styles.inputLabel}>Jenis Kelamin</Text>
+                        <View style={{ flexDirection: 'row', width: 300 }}>
+                            <View style={{ flexDirection: 'row' }}>
+                                <RadioButton
+                                    value="first"
+                                    status={ checked === 'first' ? 'checked' : 'unchecked' }
+                                    onPress={() => setChecked('first')}
+                                />
+                                <Text style={styles.radioLabel}>Laki - laki</Text>
+                            </View>
+                            <View style={{ flexDirection: 'row', marginLeft: 40 }}>
+                                <RadioButton
+                                    value="second"
+                                    status={ checked === 'second' ? 'checked' : 'unchecked' }
+                                    onPress={() => setChecked('second')}
+                                />
+                                <Text style={styles.radioLabel}>Perempuan</Text>
+                            </View>
+                        </View>
+                    </View>
+
+                    <View style={styles.inputBox}> 
+                        <Text style={styles.inputLabel}>Nomor Handphone</Text>
+                        <TextInput 
+                            autoCompleteType="cc-number"
+                            dataDetectorTypes="phoneNumber"
+                            style={styles.input}
+                            placeholder="Contoh: 082323355181"
+                        />
+                    </View>
+
+                    <View style={styles.inputBox}> 
+                        <Text style={styles.inputLabel}>Nama Sekolah</Text>
+                        <TextInput 
+                            style={styles.input}
+                            placeholder="Contoh: SD Krida Nusantara"
+                        />
+                    </View>
+
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', flex: 1, width: 300 }}>
+                        <View style={styles.inputBox}> 
+                            <Text style={styles.inputLabel}>Kelas</Text>
+                            <Picker
+                                selectedValue={selectedValue}
+                                style={styles.input2}
+                                onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                            >
+                                <Picker.Item label="Kelas 1" value="java" />
+                                <Picker.Item label="Kelas 2" value="js" />
+                            </Picker>
+                        </View>
+                        <View style={styles.inputBox}> 
+                            <Text style={styles.inputLabel}>Kota</Text>
+                            <Picker
+                                selectedValue={selectedValue}
+                                style={styles.input2}
+                                onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                            >
+                                <Picker.Item label="Jakarta" value="java" />
+                                <Picker.Item label="Surabaya" value="js" />
+                            </Picker>
+                        </View>
+                    </View>
+
+                    <View style={styles.inputBox}> 
+                        <Text style={styles.inputLabel}>Provinsi</Text>
                         <Picker
                             selectedValue={selectedValue}
-                            style={styles.input2}
+                            style={styles.input}
                             onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
                         >
-                            <Picker.Item label="Kelas 1" value="java" />
-                            <Picker.Item label="Kelas 2" value="js" />
+                            <Picker.Item label="Pilih Provinsi" enabled/>
+                            <Picker.Item label="Jawa Barat" value="java" />
+                            <Picker.Item label="DKI Jakarta" value="js" />
                         </Picker>
                     </View>
+
                     <View style={styles.inputBox}> 
-                        <Text style={styles.inputLabel}>Kota</Text>
-                        <Picker
-                            selectedValue={selectedValue}
-                            style={styles.input2}
-                            onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
-                        >
-                            <Picker.Item label="Jakarta" value="java" />
-                            <Picker.Item label="Surabaya" value="js" />
-                        </Picker>
+                        <Text style={styles.inputLabel}>Kata Sandi</Text>
+                        <TextInput 
+                            style={styles.input}
+                            placeholder="Masukkan kata sandi"
+                            secureTextEntry={true}
+                        />
                     </View>
+
+                    <View style={styles.inputBox}> 
+                        <Text style={styles.inputLabel}>Konfirmasi Kata Sandi</Text>
+                        <TextInput 
+                            style={styles.input}
+                            placeholder="Konfirmasi kata sandi kamu"
+                            secureTextEntry={true}
+                        />
+                    </View>
+                
+                    <TouchableHighlight
+                            style={styles.loginBtn}
+                        >
+                        <Text style={styles.loginText}>Buat Akun</Text>
+                    </TouchableHighlight>
+
+                    <Text style={{ fontSize: 8, marginTop: 10, marginBottom: 50 }}>Sudah punya akun? 
+                        <Text style={{ color: '#00a1db' }} onPress={() => navigation.navigate('Profile')}> Masuk disini</Text>
+                    </Text>
+
                 </View>
 
-                <View style={styles.inputBox}> 
-                    <Text style={styles.inputLabel}>Provinsi</Text>
-                    <Picker
-                        selectedValue={selectedValue}
-                        style={styles.input}
-                        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
-                    >
-                        <Picker.Item label="Pilih Provinsi" enabled/>
-                        <Picker.Item label="Jawa Barat" value="java" />
-                        <Picker.Item label="DKI Jakarta" value="js" />
-                    </Picker>
-                </View>
-
-                <View style={styles.inputBox}> 
-                    <Text style={styles.inputLabel}>Kata Sandi</Text>
-                    <TextInput 
-                        style={styles.input}
-                        placeholder="Masukkan kata sandi"
-                        secureTextEntry={true}
-                    />
-                </View>
-
-                <View style={styles.inputBox}> 
-                    <Text style={styles.inputLabel}>Konfirmasi Kata Sandi</Text>
-                    <TextInput 
-                        style={styles.input}
-                        placeholder="Konfirmasi kata sandi kamu"
-                        secureTextEntry={true}
-                    />
-                </View>
-               
-                <TouchableHighlight
-                        style={styles.loginBtn}
-                    >
-                    <Text style={styles.loginText}>Buat Akun</Text>
-                </TouchableHighlight>
-
-                <Text style={{ fontSize: 8, marginTop: 10 }}>Sudah punya akun? 
-                    <Text style={{ color: '#00a1db' }}> Masuk disini</Text>
-                </Text>
-
-            </View>
-
-        </ScrollView>
+            </ScrollView>
+        </SafeAreaView>
     )
 }
 
 
 const styles = StyleSheet.create({
+    SafeAreaView: {
+        flex: 1,
+    },
     container: {
         backgroundColor: '#fff',
-        height: 800
+        height: 1000
     },
     header: {
         flexDirection: 'row',
@@ -195,7 +208,8 @@ const styles = StyleSheet.create({
         marginTop: 12
     },
     input: {
-        border: '0.5px solid blue',
+        borderWidth: 1,
+        borderColor: 'blue',
         width: 300,
         height: 35,
         borderRadius: 20,
@@ -236,4 +250,9 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 12
     },
+    radioLabel: {
+        marginTop: 12,
+        fontWeight: 'bold',
+        fontSize: 10
+    }
   });

@@ -40,7 +40,10 @@ export default function Login({ navigation }) {
                     <View style={styles.inputSection}>
                         <Icon 
                             name='email'
-                            style={styles.icon}
+                            size="medium"
+                            style={{
+                                margin: 10
+                            }}
                         />
                         <TextInput 
                             style={styles.input}
@@ -51,7 +54,10 @@ export default function Login({ navigation }) {
                     <View style={styles.inputSection}>
                         <Icon 
                             name='lock'
-                            style={styles.icon}
+                            size="medium"
+                            style={{
+                                margin: 10
+                            }}
                         />
                         <TextInput 
                             style={styles.input}
@@ -65,6 +71,7 @@ export default function Login({ navigation }) {
 
                     <TouchableHighlight
                         style={styles.loginBtn}
+                        onPress={() => navigation.navigate("HomePage")}
                     >
                         <Text style={styles.loginText}>Masuk</Text>
                     </TouchableHighlight>
@@ -161,7 +168,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#fff',
-        border: '1px solid #c4c4c4',
+        borderWidth: 1,
+        borderColor: '#c4c4c4',
         height: 35,
         borderRadius: 5 ,
         width: 200,
