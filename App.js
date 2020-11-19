@@ -20,7 +20,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFFFF',
-    width: 300,
-    height: 550,
+    width: 360,
+    height: 800,
   },
 });

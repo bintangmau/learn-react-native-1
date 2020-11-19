@@ -113,19 +113,19 @@ export default function Login({ navigation }) {
 const styles = StyleSheet.create({
     containerUp: {
         backgroundColor: '#FE0000',
-        height: 275,
-        width: 300,
+        height: 375,
+        width: 360,
         alignItems: 'center'
     },
     containerDown: {
         backgroundColor: "white",
-        height: 300,
-        width: 300
+        height: 400,
+        width: 360
     },  
     logo: {
-        width: 150,
+        width: 180,
         height: 45,
-        marginTop: 20
+        marginTop: 40
     },
     containerLoginBox: {
         flex: 1,
@@ -133,12 +133,12 @@ const styles = StyleSheet.create({
         position: 'absolute',
         marginLeft: 20,
         marginRight: 20,
-        height: 400,
+        height: 600,
         marginTop: 100,
     },
     containerLogin: {
         backgroundColor: 'white',
-        width: 250,
+        width: 320,
         height: 400,
         shadowColor: "#000",
         shadowOffset: {

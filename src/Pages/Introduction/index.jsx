@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FE0000',
         justifyContent: 'center',
         alignItems: 'center',
-        height: 550
+        height: 800
     },
     logo: {
         width: 300,
