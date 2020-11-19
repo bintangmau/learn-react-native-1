@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, TouchableHighlight, ScrollView, SafeAreaView, I
 import { Icon, SocialIcon } from 'react-native-elements'
 import { LinearGradient } from 'expo-linear-gradient';
 import Family from '../../../assets/family.jpg'
+import Soccer from '../../../assets/soccer.png'
+import IndiHome from '../../../assets/logoindihome.png'
 
 export default function Home() {
     return (
@@ -68,7 +70,7 @@ export default function Home() {
                             <TouchableHighlight
                                 style={styles.loginBtn}
                             >
-                                <Text style={styles.loginText}>Buat Akun</Text>
+                                <Text style={styles.loginText}>Berlangganan</Text>
                             </TouchableHighlight>
                         </View>
                 </View>  
@@ -121,7 +123,7 @@ export default function Home() {
                                 size={30}
                                 reverseColor="#dbc835"
                             />
-                            <Text style={styles.secondBoxText}>Buku Digital</Text>
+                            <Text style={styles.secondBoxText}>Sertifikasi</Text>
                         </View>
                         <View>
                             <Icon 
@@ -132,7 +134,7 @@ export default function Home() {
                                 size={30}
                                 reverseColor="black"
                                 />
-                            <Text style={styles.secondBoxText}>Materi Belajar</Text>
+                            <Text style={styles.secondBoxText}>Minat Bakat</Text>
                         </View>
                         <View>
                             <Icon 
@@ -142,7 +144,7 @@ export default function Home() {
                                 color="#FE0000"
                                 size={30}
                             />
-                            <Text style={styles.secondBoxText}>Materi Ujian</Text>
+                            <Text style={styles.secondBoxText}>Konten Premium</Text>
                         </View>
                     </View>
                 </View>
@@ -189,7 +191,85 @@ export default function Home() {
                         marginRight: 30
                     }}
                 >
+                    <View style={styles.horizontalView2}>
+                        <Image 
+                            source={Soccer}
+                            style={styles.image2}
+                        />
+                        <View >
+                            <Image 
+                                source={IndiHome}
+                                style={styles.image3}
+                            />
+                            <Text style={{ color: '#fff', fontSize: 11, marginLeft: 30, marginTop: 15 }}>- Aktif selama 1 Bulan</Text>
+                            <Text style={{ color: '#fff', fontSize: 22, fontWeight: 600, marginLeft: 30, marginTop: 15 }}>Rp. 30.000</Text>
+                            <TouchableHighlight
+                                    style={styles.beliBtn}
+                                    >
+                                <Text style={styles.loginText}>Beli</Text>
+                            </TouchableHighlight>
+                        </View>
+                    </View>
 
+                    <View style={styles.horizontalView2}>
+                        <Image 
+                            source={Soccer}
+                            style={styles.image2}
+                        />
+                        <View >
+                            <Image 
+                                source={IndiHome}
+                                style={styles.image3}
+                            />
+                            <Text style={{ color: '#fff', fontSize: 11, marginLeft: 30, marginTop: 15 }}>- Aktif selama 3 Bulan</Text>
+                            <Text style={{ color: '#fff', fontSize: 22, fontWeight: 600, marginLeft: 30, marginTop: 15 }}>Rp. 70.000</Text>
+                            <TouchableHighlight
+                                    style={styles.beliBtn}
+                                    >
+                                <Text style={styles.loginText}>Beli</Text>
+                            </TouchableHighlight>
+                        </View>
+                    </View>
+
+                    <View style={styles.horizontalView2}>
+                        <Image 
+                            source={Soccer}
+                            style={styles.image2}
+                        />
+                        <View >
+                            <Image 
+                                source={IndiHome}
+                                style={styles.image3}
+                            />
+                            <Text style={{ color: '#fff', fontSize: 11, marginLeft: 30, marginTop: 15 }}>- Aktif selama 9 Bulan</Text>
+                            <Text style={{ color: '#fff', fontSize: 22, fontWeight: 600, marginLeft: 30, marginTop: 15 }}>Rp. 130.000</Text>
+                            <TouchableHighlight
+                                    style={styles.beliBtn}
+                                    >
+                                <Text style={styles.loginText}>Beli</Text>
+                            </TouchableHighlight>
+                        </View>
+                    </View>
+
+                    <View style={styles.horizontalView2}>
+                        <Image 
+                            source={Soccer}
+                            style={styles.image2}
+                        />
+                        <View >
+                            <Image 
+                                source={IndiHome}
+                                style={styles.image3}
+                            />
+                            <Text style={{ color: '#fff', fontSize: 11, marginLeft: 30, marginTop: 15 }}>- Paket 1 Tahun</Text>
+                            <Text style={{ color: '#fff', fontSize: 22, fontWeight: 600, marginLeft: 30, marginTop: 15 }}>Rp. 240.000</Text>
+                            <TouchableHighlight
+                                    style={styles.beliBtn}
+                                    >
+                                <Text style={styles.loginText}>Beli</Text>
+                            </TouchableHighlight>
+                        </View>
+                    </View>
 
                 </ScrollView>
             
@@ -310,5 +390,41 @@ const styles = StyleSheet.create({
         borderBottomStartRadius: 5,
         marginTop: -5,
         backgroundColor: '#c4c4c4'
+    },
+    horizontalView2: {
+        width: 280,
+        height: 170,
+        marginRight: 30,
+        backgroundColor: "#ff6666",
+        borderRadius: 10,
+        flex: 1,
+        flexDirection: 'row'
+    },
+    image2: {
+        width: 100,
+        height: 100,    
+    },
+    image3: {
+        width: 100,
+        height: 20,    
+        marginTop: 10,
+        marginLeft: 80
+    },
+    beliBtn: {
+        borderRadius: 5,
+        width: 120,
+        height: 30,
+        backgroundColor: '#FE0000',
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: "black",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.8,
+        shadowRadius: 5,
+        marginLeft: 45,
+        marginTop: 15
     }
   });
